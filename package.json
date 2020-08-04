@@ -18,5 +18,13 @@
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanhuaji/HUAWEI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shanhuaji/HUAWEI/issues"
+  },
+  "homepage": "https://github.com/shanhuaji/HUAWEI#readme",
   "description": ""
 }
