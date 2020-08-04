@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .active {
+      background-color: red;
+    }
+    li {
+      list-style: none;
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+    }
+    a {
+      position: fixed;
+      bottom: 40px;
+      right: 0;
+      display: none;
+    }
+    .box2 {
+      width: 100%;
+      height: 50px;
+      background-color: red;
+      position: fixed;
+      top: -60px;
+      left: 0px;
+    }
+  </style>
+  <body style="height: 3000px;">
+    <div id="box1">
+      <button class="active">1111111</button>
+      <button>2222222</button>
+      <button>3333333</button>
+      <button>4444444</button>
+    </div>
+
+    <ul>
+      <li>11111111111</li>
+      <li>22222222222</li>
+      <li>33333333333</li>
+      <li>44444444444</li>
+    </ul>
+    <div class="box2"></div>
+
+    <a href="javascript:;">回到顶部</a>
+    <input type="checkbox" class="allselect" />全选<br />
+    <input type="checkbox" />1<br />
+    <input type="checkbox" />2<br />
+    <input type="checkbox" />3<br />
+    <input type="checkbox" />4<br />
+    <input type="checkbox" />5<br />
+    <input type="checkbox" />6<br />
+    <input type="checkbox" />7<br />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+      /* table 切换 */
+      $("ul li").hide();
+      $("button").on("click", function () {
+        $(this).addClass("active").siblings("button").removeClass("active");
+        $("ul li").hide();
+        $("ul li").eq($(this).index()).show();
+      });
+      /* 滚动条回到顶部 */
+      //   $(window).on("scroll", function () {
+      //     if ($(window).scrollTop() > 300) {
+      //       $("a").show();
+      //     }else{
+      //         $("a").hide();
+      //     }
+      //   });
+
+      //   $("a").on("click", function () {
+      //    /* 运动 */
+      //    $("html,body").animate({
+      //        scrollTop:0
+      //    })
+      //   });
+      /* 顶部悬浮 */
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() > 300) {
+          $(".box2").stop(true).animate({
+            top: 0,
+          });
+        } else {
+          $(".box2").stop(true).animate({
+            top: -60,
+          });
+        }
+      });
+      /* 全选框 */
+      let $all = $(".allselect");
+      let $inputs = $("input").not(".allselect");
+      /* 全选按钮 */
+      $all.on("click", function () {
+        $inputs.prop("checked", $all.prop("checked"));
+      });
+     /* 点击除了全选之外的 */
+      $inputs.on("click", function () {
+       /* 除了全选之外按钮的所有长度===被选中的按钮的长度 */
+        if ($inputs.length === $("input:checked").not(".allselect").length) {
+          $all.prop("checked", true);
+        } else {
+          $all.prop("checked", false);
+        }
+      });
+    </script>
+  </body>
+</html>

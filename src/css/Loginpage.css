@@ -1,0 +1,176 @@
+html,
+body {
+  height: 100%;
+}
+/* logo */
+.logo {
+  width: 100%;
+  height: 50px;
+  background-color: #f3f3f3;
+  position: relative;
+}
+.logo > div {
+  width: 240px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  left: 15%;
+}
+.logo em {
+  border-left: 1px solid black;
+  padding: 0 15px;
+}
+/* 内容 */
+.content {
+  width: 100%;
+  height: 590px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content > div {
+  width: 800px;
+  height: 70%;
+
+  position: relative;
+}
+.content h2 {
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+ 
+}
+.content-left {
+  margin-top: 30px;
+  width: 50%;
+  height: 260px;
+  border-right: 1px solid black;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content-right {
+  margin-top: 30px;
+  float: right;
+  width: 49%;
+  height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-left em {
+  display: flex;
+  width: 120px;
+  height: 120px;
+  background-color: #f3f3f3;
+}
+.content-left em img {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+}
+.content-left span {
+  margin-top: 30px;
+  font-size: 6px;
+  color: #8a8a8a;
+}
+.content-right .forget {
+  display: flex;
+}
+.content-right .penguin {
+  display: flex;
+}
+.content-right input {
+  width: 240px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #e1e1e1;
+}
+.content-right > span {
+  color: #007dff;
+  margin-left: -130px;
+}
+.content-right .sub {
+  background-color: #eba6a9;
+  color: #fff;
+  font-size: 16px;
+}
+.forget li {
+  color: 12px;
+  color: #007dff;
+  border-right: 1px solid black;
+  margin-top: 40px;
+}
+.forget a {
+  color: 12px;
+  color: #007dff;
+  padding: 5px;
+}
+.bot {
+  position: absolute;
+  right: 100px;
+  bottom: -40px;
+}
+.bot .bot-penguin {
+  width: 180px;
+  display: flex;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.bot .bot-penguin li {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+}
+.bot-penguin li a{
+  font-size: 30px;
+  color: #8a8a8a;
+}
+/* 底部 */
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-upper {
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f3;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 108px;
+  margin-top: -28px;
+}
+.bottom-upper li {
+  float: left;
+  padding: 0 15px;
+  border-right: 1px solid #aeaeae;
+}
+.bottom-upper a {
+  font-size: 8px;
+  color: black;
+}
+.bottom-upper span {
+  margin-top: 5px;
+  font-size: 8px;
+  color: #aeaeae;
+}
+.bottom-upper li:last-child {
+  border: none;
+}
+

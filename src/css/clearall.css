@@ -1,0 +1,40 @@
+html,body,ol,ul,li,h1,h2,h3,h4,h5,h6,p,th,td,dl,dt,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;}
+			body{
+			    font-size:16px;
+			    font-family: '微软雅黑';
+			}
+			ul,ol,li{
+			    list-style:none;
+			}
+			h1,h2,h3,h4,h5,h6{
+			    font-size:16px;
+			    font-weight: normal;
+			}
+			b,strong{
+			    font-weight: normal;
+			}
+			i,em{
+			    font-style: normal;
+			}
+			a,u,ins{
+			    text-decoration: none;
+			}
+			img{
+			    border:0;
+				display:block;
+			}
+			input,fieldset{
+				outline: none;
+				border:0;
+			}
+			.clear_fix:after{
+			    content:'.';
+			    clear:both;
+			    height:0;
+			    overflow:hidden;
+			    display:block;
+			    visibility: hidden;
+			}
+			.clear_fix{
+			    zoom:1; /* 用来兼容IE6、7 的高度自适应的问题的； */
+			}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .baidu {
+      width: 590px;
+      height: 340px;
+      margin: 100px auto;
+      border: 2px solid black;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .baidu ul {
+      /*  width: 3576px; */
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+
+    .baidu ul li {
+      float: left;
+      width: 590px;
+      height: 340px;
+    }
+    .baidu ul li img {
+      width: 590px;
+      height: 340px;
+    }
+    .baidu ol {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    .baidu ol li {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: black;
+      text-indent: -999em;
+      float: left;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    #left,
+    #right {
+      font-size: 100px;
+      position: absolute;
+      top: 50%;
+      margin-top: -60px;
+      text-decoration: none;
+      color: black;
+      /*  display: none; */
+    }
+
+    #left {
+      left: 20px;
+    }
+
+    #right {
+      right: 20px;
+    }
+
+    a#left:hover,
+    a#right:hover {
+      color: red;
+    }
+
+    .baidu ol li.active {
+      background: orange;
+    }
+
+    .baidu ul li.showpic {
+      opacity: 1;
+    }
+  </style>
+  <body>
+    <div class="baidu">
+      <ul>
+        <li>
+          <img src="./img/889bb8f1-3300-415c-87a7-33d60f60d13f.jpg" alt="" />
+        </li>
+        <li>
+          <img src="./img/076d682acca747b4bef4b89ceb7a91a5.jpeg" alt="" />
+        </li>
+        <li><img src="./img/ecab8706cdd84eed85112086d2fb2295.JPG" alt="" /></li>
+        <li><img src="./img/IMG_20190625_134911.jpg" alt="" /></li>
+        <li><img src="./img/IMG_20190625_143546.jpg" alt="" /></li>
+        <li>
+          <img src="./img/889bb8f1-3300-415c-87a7-33d60f60d13f.jpg" alt="" />
+        </li>
+      </ul>
+      <ol>
+        <li class="active">1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ol>
+      <a href="javascript:;" id="left">&lt;</a>
+      <a href="javascript:;" id="right">&gt;</a>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+      const $oLeft = $("#left");
+      const $oRight = $("#right");
+      const $oList = $("ol li");
+      const $aImg = $("ul li");
+      const $oUl = $("ul");
+      /* 设置下标 */
+      let index = 0;
+      /* 图片一行显示，设置最外层父元素的宽度 */
+      $oUl.width($aImg.length * $aImg.width());
+      /* 小圆点移动事件 */
+      $oList.on("mouseenter", function () {
+        /* 赋值下标 方便后边使用 */
+        index = $(this).index();
+        /* 小圆点样式 */
+        $(this).addClass("active").siblings("ol li").removeClass("active");
+        /* 图片移动 */
+        $oUl.stop(true).animate({
+          left: -$aImg.width() * index,
+        });
+        console.log(index);
+      });
+
+      /* 右边箭头 */
+      $oRight.on("click", function () {
+        index++;
+        /* 下标大于小圆点的个数 */
+        /* 下标是5  就是第6张图片（和第一张图片一样） */
+        if (index > $oList.length) {
+          /* 把大图强制拉倒开始位置 */
+          /* 下标变成1 显示第二张图片 */
+          $oUl.css("left", "0px");
+          index = 1;
+        }
+        /* 当切换到第六张图片的时候，下标等于5 */
+        if (index === $oList.length) {
+          /* 把小圆点的下标强制改为0  给第0个(下标)小圆点加样式 */
+          $oList
+            .eq(0)
+            .addClass("active")
+            .siblings("ol li")
+            .removeClass("active");
+        } else {
+          $oList
+            .eq(index)
+            .addClass("active")
+            .siblings("ol li")
+            .removeClass("active");
+        }
+        /* 图片切换 */
+        $oUl.stop(true).animate({
+          left: -$aImg.width() * index,
+        });
+      });
+      /* 左箭头 */
+      $oLeft.on("click", function () {
+        index--;
+        /* 小于0的时候 下标设置为4 显示第五张图  */
+        /* 大图的位置强制拉倒第五张的位置 */
+        if (index < 0) {
+          index = 4;
+          $oUl.css("left", -$aImg.eq(0).width() * $oList.length);
+        }
+        $oList
+          .eq(index)
+          .addClass("active")
+          .siblings("ol li")
+          .removeClass("active");
+        $oUl.stop(true).animate({
+          left: -$aImg.width() * index,
+        });
+      });
+    </script>
+  </body>
+</html>

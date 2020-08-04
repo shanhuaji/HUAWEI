@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-color: #f4f4f4;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .header {
+            width: 1190px;
+            height: 200px;
+            background-color: orange;
+            margin: 0 auto 10px;
+        }
+        
+        .nav {
+            width: 100%;
+            height: 60px;
+            background-color: orange;
+        }
+        
+        .banner {
+            width: 1190px;
+            margin: 0px auto;
+        }
+        
+        .menu {
+            position: relative;
+            z-index: 3;
+        }
+        
+        .menu ul {
+            overflow: hidden;
+            padding: 10px 0;
+            height: 450px;
+            background-color: #fefefe;
+            color: #636363;
+            margin-top: 10px;
+            width: 190px;
+        }
+        
+        .menu ul li {
+            height: 25px;
+            line-height: 25px;
+            padding-left: 18px;
+        }
+        
+        .menu ul li.active {
+            background-color: #d9d9d9;
+        }
+        
+        .menu li a {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .menu li span {
+            padding: 0 2px;
+            font-size: 12px;
+        }
+        
+        .cartlist {
+            position: absolute;
+            left: 191px;
+            top: 0;
+            width: 998px;
+            min-height: 468px;
+            border: 1px solid #f7f7f7;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
+            display: none;
+            transition: top 0.3s ease;
+        }
+        
+        .item {
+            padding: 20px;
+            display: none;
+           
+        }
+    </style>
+</head>
+<body>
+    <body style="height: 1500px;">
+        <div class="header">
+            <div class="login">
+                <a href="registry.html">请注册</a>
+                <a href="login.html">请登录</a>
+            </div>
+            <div class="admin" style="display: none;">
+                <span></span>：欢迎光临
+                <a href="javascript:;">退出</a>
+            </div>
+        </div>
+        <div class="nav"></div>
+        <div class="banner">
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#">家用电器</a>
+                    </li>
+                    <li>
+                        <a href="#">手机</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">数码</a>
+                    </li>
+                    <li>
+                        <a href="#">电脑</a><span>/</span><a href="#">办公</a>
+                    </li>
+                    <li>
+                        <a href="#">家居</a><span>/</span><a href="#">家具</a><span>/</span><a href="#">家装</a><span>/</span><a href="#">厨具</a>
+                    </li>
+                    <li>
+                        <a href="#">男装</a><span>/</span><a href="#">女装</a><span>/</span><a href="#">童装</a><span>/</span><a href="#">内衣</a>
+                    </li>
+                    <li>
+                        <a href="#">美妆</a><span>/</span><a href="#">个护清洁</a><span>/</span><a href="#">宠物</a>
+                    </li>
+                    <li>
+                        <a href="#">女鞋</a><span>/</span><a href="#">箱包</a><span>/</span><a href="#">钟表</a><span>/</span><a href="#">珠宝</a>
+                    </li>
+                    <li>
+                        <a href="#">男鞋</a><span>/</span><a href="#">运动</a><span>/</span><a href="#">户外</a>
+                    </li>
+                    <li>
+                        <a href="#">房产</a><span>/</span><a href="#">汽车</a><span>/</span><a href="#">汽车用品</a>
+                    </li>
+                    <li>
+                        <a href="#">母婴</a><span>/</span><a href="#">玩具乐器</a>
+                    </li>
+                    <li>
+                        <a href="#">食品</a><span>/</span><a href="#">酒类</a><span>/</span><a href="#">生鲜</a><span>/</span><a href="#">特产</a>
+                    </li>
+                    <li>
+                        <a href="#">艺术</a><span>/</span><a href="#">礼品鲜花</a><span>/</span><a href="#">农资绿植</a>
+                    </li>
+                    <li>
+                        <a href="#">医药保健</a><span>/</span><a href="#">计生情趣</a>
+                    </li>
+                    <li>
+                        <a href="#">图书</a><span>/</span><a href="#">文娱</a><span>/</span><a href="#">教育</a><span>/</span><a href="#">电子书</a>
+                    </li>
+                    <li>
+                        <a href="#">机票</a><span>/</span><a href="#">酒店</a><span>/</span><a href="#">旅游</a><span>/</span><a href="#">生活</a>
+                    </li>
+                    <li>
+                        <a href="#">理财</a><span>/</span><a href="#">众筹</a><span>/</span><a href="#">白条</a><span>/</span><a href="#">保险</a>
+                    </li>
+                    <li>
+                        <a href="#">安装</a><span>/</span><a href="#">维修</a><span>/</span><a href="#">清洗</a><span>/</span><a href="#">二手</a>
+                    </li>
+                    <li>
+                        <a href="#">工业品</a>
+                    </li>
+                </ul>
+                <div class="cartlist">
+                    <div class="item"><a href="list.html">模拟跳转商品列表页</a></div>
+                    <div class="item">第二块内容</div>
+                    <div class="item">第三块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第五块内容</div>
+                    <div class="item">第六块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第四块内容</div>
+                    <div class="item">第十五块内容</div>
+                    <div class="item">第十六块内容</div>
+                    <div class="item">第十七块内容</div>
+                    <div class="item">第十八块内容</div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+          
+            $("li").on('mouseenter',function(){
+                /* 总的大框显示 */
+                $('.cartlist').show()
+                /* 下标对应的模块显示 */
+                $(".item").eq($(this).index()).show().siblings('.item').hide()
+                if($(window).scrollTop()>280){
+                   $('.cartlist').css({
+                       /* 滚动条的距离-元素到顶端的高度 */
+                       top:$(window).scrollTop() - $('.menu').offset().top
+                    })
+                }else{
+                    $('.cartlist').css({
+                       top: 0
+                    })
+                }
+            })
+            $("li").on('mouseleave',function(){
+                $('.cartlist').hide()
+            })
+            $('.cartlist').on('mouseenter',function(){
+                $('.cartlist').show()
+            })
+            $('.cartlist').on('mouseleave',function(){
+                $('.cartlist').hide()
+            })
+        </script>
+</body>
+</html>

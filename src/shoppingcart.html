@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="./js/shopping/main.js"></script> -->
+    <script
+      src="./js/require.js"
+      defer
+      async="true"
+      data-main="./js/shopping/main.js"
+    ></script>
+  </head>
+
+  <link rel="stylesheet" href="http://127.0.0.1/HUAWEI/src/css/clearall.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/HUAWEI/src/css/iconfont.css" />
+  <link
+    rel="stylesheet"
+    href="http://127.0.0.1/HUAWEI/src/css/shoppingcart.css"
+  />
+
+  <body>
+    <!-- 购物车 -->
+    <!-- 导航栏 -->
+    <nav>
+      <div>
+        <ul class="nav-left">
+          <li><a href="JavaScript:;">首页</a></li>
+          <li><a href="JavaScript:;">华为官网</a></li>
+          <li><a href="JavaScript:;">荣耀官网</a></li>
+          <li><a href="JavaScript:;">花粉俱乐部</a></li>
+          <li><a href="JavaScript:;">v码(优购码)</a></li>
+          <li><a href="JavaScript:;">企业购</a></li>
+          <li><a href="JavaScript:;">Select Region</a></li>
+          <li><a href="JavaScript:;">更多精彩</a></li>
+        </ul>
+        <ul class="nav-right">
+          <li><a href="JavaScript:;">请登录</a></li>
+          <li><a href="JavaScript:;">注册</a></li>
+          <li><a href="JavaScript:;">我的订单</a></li>
+          <li><a href="JavaScript:;">客户服务</a></li>
+          <li><a href="JavaScript:;">网站导航</a></li>
+          <li><a href="JavaScript:;">手机版</a></li>
+          <li><a href="JavaScript:;">购物车(0)</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- 导航条下的logo -->
+    <div class="logo">
+      <div>
+        <a href=""
+          ><img
+            src="https://res.vmallres.com/pimages//sale/2019-01/AF2GXbxrWmRqvyNfYzCl.png"
+            alt=""
+        /></a>
+        <span>我的购物车</span>
+      </div>
+    </div>
+    <!-- 主要内容 -->
+    <div class="main">
+      <!-- 购物车为空 -->
+      <div class="main-empty">
+        <em>购物车</em>
+        <span>您的购物车里什么也没有哦~</span>
+        <i>去逛逛</i>
+      </div>
+      <!-- 购物车不为空 -->
+      <div class="no-empty">
+        <!-- 头部 -->
+        <div class="main-top">
+          <div class="mt-left">
+            <li><input type="checkbox" class="allcheck" /><span>全选</span></li>
+            <i>商品</i>
+          </div>
+          <div class="mt-right">
+            <i>单价</i>
+            <i>数量</i>
+            <i>小计</i>
+            <i>操作</i>
+          </div>
+        </div>
+        
+          <!-- 中间内容 -->
+        <div class="main-middle">
+           
+        </div>
+       
+          <!-- 立即结算 -->
+          <div class="main-settlement">
+            <div class="ms-left">
+              <input type="checkbox" class="allcheck" />
+              <span>全选</span>
+              <span>删除</span>
+            </div>
+            <div class="ms-right">
+              <ul>
+                <li>总计：<em>￥7988.00</em><a href="">?</a></li>
+                <li>已选择 <i>1</i>件商品，优惠： ¥ 0.00</li>
+              </ul>
+              <span>立即结算</span>
+            </div>
+          </div>
+        
+      </div>
+      <!-- 已删除产品 -->
+      <!-- 有过记录就会显示 -->
+      <div class="main-delete">
+        <h2>已删除产品</h2>
+        <div class="md-top">
+          <i>商品</i>
+          <ul>
+            <li>数量</li>
+            <li>金额</li>
+            <li>操作</li>
+          </ul>
+        </div>
+        <!-- 商品的具体名称 价格等 -->
+        <div class="md-content">
+          <em
+            >HUAWEI Mate 30 Pro 5G 全网通 8GB+128GB 麒麟990
+            双4000万徕卡电影四摄（亮黑色）</em
+          >
+          <ul>
+            <li><i>x1</i></li>
+            <li><i>¥5899.00</i></li>
+            <li><span>重新购买</span></li>
+          </ul>
+        </div>
+        <em>更多已删除商品</em>
+      </div>
+    </div>
+
+    <!-- 底栏 -->
+    <div class="max-bot">
+      <div class="bot">
+        <!-- 上 -->
+        <ul>
+          <a href="">
+            <i class="iconfont">&#xe62c;</i>
+            <em>百强企业 品质保证</em>
+          </a>
+          <a href="">
+            <i class="iconfont">&#xe635;</i>
+            <em>7天退货 15天换货</em>
+          </a>
+          <a href="">
+            <i class="iconfont">&#xe64b;</i>
+            <em>48元起免运费</em>
+          </a>
+          <a href="">
+            <i class="iconfont">&#xe51c;</i>
+            <em>2000家服务店 全国联保</em>
+          </a>
+        </ul>
+        <!-- 中间 -->
+        <div class="bot-middle">
+          <ul>
+            <li>
+              <em>购物相关</em>
+              <i><a href="">购物指南</a></i>
+              <i><a href="">配送方式</a></i>
+              <i><a href="">支付方式</a></i>
+              <i><a href="">常见问题</a></i>
+            </li>
+            <li>
+              <em>保修与退换货</em>
+              <i><a href="">保修政策</a></i>
+              <i><a href="">退换货政策</a></i>
+              <i><a href="">退换货流程</a></i>
+              <i><a href="">保修状态查询</a></i>
+              <i><a href="">配件防伪查询</a></i>
+            </li>
+            <li>
+              <em>维修与技术支持</em>
+              <i><a href="">保修政策</a></i>
+              <i><a href="">退换货政策</a></i>
+              <i><a href="">退换货流程</a></i>
+              <i><a href="">保修状态查询</a></i>
+              <i><a href="">配件防伪查询</a></i>
+            </li>
+            <li>
+              <em>特色服务</em>
+              <i><a href="">购物指南</a></i>
+              <i><a href="">配送方式</a></i>
+              <i><a href="">支付方式</a></i>
+              <i><a href="">常见问题</a></i>
+            </li>
+            <li>
+              <em>关于我们</em>
+              <i><a href="">保修政策</a></i>
+              <i><a href="">退换货政策</a></i>
+              <i><a href="">退换货流程</a></i>
+              <i><a href="">保修状态查询</a></i>
+              <i><a href="">配件防伪查询</a></i>
+            </li>
+            <li>
+              <em>友情链接</em>
+              <i><a href="">保修政策</a></i>
+              <i><a href="">退换货政策</a></i>
+              <i><a href="">退换货流程</a></i>
+              <i><a href="">保修状态查询</a></i>
+              <i><a href="">配件防伪查询</a></i>
+            </li>
+          </ul>
+          <div class="bot-right">
+            <em>950805</em>
+            <p>7*24小时客服热线(仅收市话费)</p>
+            <em>
+              <strong class="customer-service iconfont"
+                >&#xe61b;&nbsp;&nbsp;在线客服</strong
+              >
+            </em>
+            <em>
+              <strong class="iconfont">关注Vmall:</strong>
+              <i class="iconfont">&#xe626;</i>
+              <i class="iconfont">&#xe616;</i>
+              <i class="iconfont">&#xe505;</i>
+              <i class="iconfont">&#xe640;</i>
+            </em>
+          </div>
+        </div>
+        <!-- 下 -->
+        <div class="most-bot">
+          <a href=""
+            ><img
+              src="https://res.vmallres.com/pimages//sale/2019-01/wLelYbpMVWbj9Xpaa5Fk.png"
+              alt=""
+          /></a>
+          <div>
+            <ul>
+              <li><a href="">华为集团</a></li>
+              <li><a href="">华为CBG官网</a></li>
+              <li><a href="">荣耀官网</a></li>
+              <li><a href="">花粉俱乐部</a></li>
+              <li><a href="">华为应用市场</a></li>
+              <li><a href="">EMUI</a></li>
+              <li><a href="">华为终端云空间</a></li>
+              <li><a href="">开发者联盟</a></li>
+              <li><a href="">华为商城手机版</a></li>
+              <li><a href="">网站地图</a></li>
+            </ul>
+            <em
+              >隐私声明 服务协议 COOKIES Copyright © 2012-2020 华为终端有限公司
+              版权所有 粤ICP备19015064号|粤公网安备 44190002003939号
+              增值电信业务经营许可证：粤B2-20190762|备案主体编号：44201919072182</em
+            >
+          </div>
+        </div>
+        <a href="" class="license"
+          ><img
+            src="https://res.vmallres.com/pimages//template/content/2016/20160226162415360.png"
+            alt=""
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>
