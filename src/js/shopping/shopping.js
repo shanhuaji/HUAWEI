@@ -15,8 +15,8 @@ define([], function () {
       /* 保存cookie中传的商品id和数量 */
       this.idArr = $.cookie("cookiesid").split(",");
       this.numArr = $.cookie("cookienum").split(",");
-      console.log(this.idArr)
-      console.log(this.numArr)
+      console.log(this.idArr);
+      console.log(this.numArr);
       /* 使用cook中传的值，获取后端的数据 */
       /* 获取数组库的数据 */
       $.ajax({
@@ -117,7 +117,7 @@ define([], function () {
       this.middle.html(strHtml);
       /* 渲染完成数据后立即渲染总数量和总价格 */
       /* 所有商品总数量和总价格 */
-      this.totalPriceNum(); 
+      this.totalPriceNum();
       /* 点击添加商品修改价格 */
       this.clickHandler();
       this.clickCheckbox(); /* 复选框 */
@@ -190,7 +190,9 @@ define([], function () {
     clickCheckbox() {
       let first = $("input[type='checkbox']:first"); /* 第一个全选 */
       let last = $("input[type='checkbox']:last"); /* 最后一个全选 */
-      let other = $("input[type='checkbox']").not("input:last,input:first"); /* 其它按钮 */
+      let other = $("input[type='checkbox']").not(
+        "input:last,input:first"
+      ); /* 其它按钮 */
 
       let bool = false;
       first.on("click", () => {
@@ -198,20 +200,19 @@ define([], function () {
         bool ? other.prop("checked", true) : other.prop("checked", false);
         bool ? last.prop("checked", true) : last.prop("checked", false);
       });
-         /* 单选框 */
-        other.on("click", function () {
-          /* 除了全选框其它的框 */
-          let singleCheck = $("input[type='checkbox']:checked").not(".allcheck");
-         /* 判断被选中的单选框的个数 */
-          if (other.size() === singleCheck.size()) {
-            first.prop("checked", true);
-            last.prop("checked", true);
-          } else {
-            first.prop("checked", false);
-            last.prop("checked", false);
-          }
-        });
-      
+      /* 单选框 */
+      other.on("click", function () {
+        /* 除了全选框其它的框 */
+        let singleCheck = $("input[type='checkbox']:checked").not(".allcheck");
+        /* 判断被选中的单选框的个数 */
+        if (other.size() === singleCheck.size()) {
+          first.prop("checked", true);
+          last.prop("checked", true);
+        } else {
+          first.prop("checked", false);
+          last.prop("checked", false);
+        }
+      });
     }
   }
   return Shop;
