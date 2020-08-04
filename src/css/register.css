@@ -22,6 +22,9 @@ body {
   border-left: 1px solid black;
   padding: 0 15px;
 }
+.sub{
+  cursor: pointer;
+}
 /* 内容 */
 .content{
     width: 100%;
@@ -58,6 +61,7 @@ body {
     align-items: center;
   
 }
+.reg-list em{font-size: 14px;}
 .content .reg-list input{
     background-color:#e1e1e1;
     width: 350px;
