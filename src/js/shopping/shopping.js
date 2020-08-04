@@ -15,8 +15,6 @@ define([], function () {
       /* 保存cookie中传的商品id和数量 */
       this.idArr = $.cookie("cookiesid").split(",");
       this.numArr = $.cookie("cookienum").split(",");
-      console.log(this.idArr);
-      console.log(this.numArr);
       /* 使用cook中传的值，获取后端的数据 */
       /* 获取数组库的数据 */
       $.ajax({
@@ -121,6 +119,8 @@ define([], function () {
       /* 点击添加商品修改价格 */
       this.clickHandler();
       this.clickCheckbox(); /* 复选框 */
+      this.removeCommodity(); /* 删除当前产品 */
+      this.removeHandler();/* 删除 */
     }
     /* 总价格和总数量 */
     totalPriceNum() {
@@ -186,20 +186,22 @@ define([], function () {
         });
       });
     }
+
     /* 选框 */
     clickCheckbox() {
-      let first = $("input[type='checkbox']:first"); /* 第一个全选 */
-      let last = $("input[type='checkbox']:last"); /* 最后一个全选 */
-      let other = $("input[type='checkbox']").not(
-        "input:last,input:first"
-      ); /* 其它按钮 */
-
+      /* 两个全部起一样的class名字 */
+      let first = $(".allcheck"); /* 第一个全选 */
+      let last = $(".allcheck"); /* 最后一个全选 */
+      /* 其它按钮 */
+      let other = $("input[type='checkbox']").not("input:last,input:first");
+      /* 定义状态 用来全部按钮的切换 */
       let bool = false;
       first.on("click", () => {
         bool = !bool;
         bool ? other.prop("checked", true) : other.prop("checked", false);
         bool ? last.prop("checked", true) : last.prop("checked", false);
       });
+
       /* 单选框 */
       other.on("click", function () {
         /* 除了全选框其它的框 */
@@ -212,6 +214,47 @@ define([], function () {
           first.prop("checked", false);
           last.prop("checked", false);
         }
+      });
+    }
+    /* 删除 */
+    removeCommodity() {
+      /* 购物车中的商品 */
+      const $current = $(".select-product");
+      /* 删除按钮 */
+      const $remove = $(".select-right i");
+      let that = this;
+      $remove.on("click", function () {
+        /* 被点击元素的下标 */
+        let index = $remove.index($(this));
+        /* 删除对应的商品 */
+        $current.eq(index).remove();
+        /* 删除对应商品在cookie中的值 */
+        that.idArr.splice(index, 1);
+        /* 创建新的数组 在删除商品和之前删除的cook中对应的值 */
+        /* 获取页面中剩余商品的数量 */
+        /* 将剩余的商品的id和剩余商品的数量上传到cookie */
+        let newnumArr = [];
+        $.each($(".sr-num input"), (index, value) => {
+          newnumArr.push($(value).val());
+        });
+        /* 将删除后剩余的商品的id和数量传给cookie */
+        $.cookie("cookiesid", that.idArr, { expires: 7, path: "/" });
+        $.cookie("cookienum", newnumArr, { expires: 7, path: "/" });
+      });
+    }
+    /* 总删除 */
+    removeHandler() {
+      /* 清除cookie */
+      /* 点击全部商品 删除全部商品，结算，全选 */
+      /* 清除所有的cookie  重新给cookie赋值 保证程序正常进行 */
+      $(".ms-left span:last").on("click", () => {
+        $(".main-middle").remove();
+        $(".main-settlement").remove();
+        $(".main-top").remove();
+        $.cookie("cookiesid", null, { expires: -1, path: "/" });
+        $.cookie("cookienum", null, { expires: -1, path: "/" });
+         $.cookie('cookiesid', "",{ expires: 7, path: "/" });
+         $.cookie('cookienum', "",{ expires: 7, path: "/" });
       });
     }
   }
