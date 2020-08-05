@@ -25,10 +25,10 @@ define([], function () {
       this.aLi.on("mouseenter", function () {
         that.list.show();
         that.name = $(this).children().eq(0).html();
-       
+       console.log("111111111111")
         $.ajax({
           type: "post",
-          url: "http://127.0.0.1/HUAWEI/php/secounds.php",
+          url: "http://127.0.0.1/HUAWEI/php/select.php",
           data: {
             /* 当前滑过元素的内容 */
             name: that.name,
@@ -36,7 +36,7 @@ define([], function () {
           dataType: "json",
         }).done(function (date) {
           that.display(date);
-         
+         console.log(date)
         });
       });
       this.list.on("mouseenter", () => {
