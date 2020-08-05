@@ -3,7 +3,7 @@
 /* require(['listpage'],function(List){
   let list = new List()
 }) */
-
+/* 不用插件 分页  有瑕疵 */
 const { cssHooks } = require("jquery");
 
 define([], function () {
@@ -33,13 +33,13 @@ define([], function () {
         this.data = date;
         this.display();
         this.clickHandler();
+        
       });
     }
     /* 数据渲染 */
     display() {
-      let str = "";
-      console.log(this.data)
-      $.each(this.data, (index, value) => {
+      // console.log(this.data.size());
+      /* $.each(this.data, (index, value) => {
         str += `
           <a href="http://127.0.0.1/HUAWEI/src/details.html?sid=${value.Id}" target="_blank">
             <img data-original="${value.banuser}" class="lazyload" width="130" height="150" />
@@ -49,14 +49,73 @@ define([], function () {
             <span>402人评价 95%好评</span>
           </a>
         `;
+        this.ulList.html(strhtml);
       });
-      this.content.html(str);
+      this.content.html(str); */
 
+      let strip = 16; /* 每页显示的条数 */
+      let strOne =''
+      /* 第一次请求数据 */
+      for (let j = 0 * strip; j < 0 * strip + strip; j++) {
+       /* 如果j的值 小于数据的长度  就渲染数据 */
+        if (j < this.data.length) {
+          strOne += `
+              <a href="http://127.0.0.1/HUAWEI/src/details.html?sid=${this.data[j].Id}" target="_blank">
+                <img data-original="${this.data[j].banuser}" class="lazyload" width="130" height="150" />
+                <strong>${this.data[j].phoneName}</strong>
+                <i>￥${this.data[j].price}</i>
+                <em>限时特价 分期免息 赠送积分</em>
+                <span>402人评价 95%好评</span>
+              </a>
+            `;
+        }
+      }
+      
+      this.content.html(strOne);
+      
       $(function () {
         $("img.lazyload").lazyload({ effect: "fadeIn" });
       });
-      /* 页码 */
-      this.list();
+
+      let strip = 16; /* 每页显示的条数 */
+      let num = Math.ceil(this.data.length / strip);/* 页码 */
+      
+      let strhtml = "";
+      //  渲染页码 根据页码定义渲染次数
+      for (let i = 0; i < num; i++) {
+        strhtml += `<li>${i + 1}</li>`;
+      }
+      this.ulList.html(strhtml);
+      let that = this;
+      /* 每页显示16个 */
+      /* 页码  渲染的开始下标  渲染结束的下标 */
+      /* 0        0*16            0*16+16 */
+     /*  1        1*16            1*16+16 */
+      $(".num-content ul li").on("click", function () {
+        /* 寻找被点击元素的下标 */
+        let i = $(".num-content ul li").index($(this));
+        let strTwo = "";
+        for (let j = i * strip; j < i * strip + strip; j++) {
+          /* 如果j的值 小于数据的长度  就渲染数据 */
+          if (j < that.data.length) {
+            strTwo += `
+                <a href="http://127.0.0.1/HUAWEI/src/details.html?sid=${that.data[j].Id}" target="_blank">
+                  <img data-original="${that.data[j].banuser}" class="lazyload" width="130" height="150" />
+                  <strong>${that.data[j].phoneName}</strong>
+                  <i>￥${that.data[j].price}</i>
+                  <em>限时特价 分期免息 赠送积分</em>
+                  <span>402人评价 95%好评</span>
+                </a>
+              `;
+          }
+        }
+        that.content.html(strTwo);
+        
+        $(function () {
+          $("img.lazyload").lazyload({ effect: "fadeIn" });
+        });
+       
+      });
     }
     /* 排序 */
     clickHandler() {
@@ -84,18 +143,6 @@ define([], function () {
           this.display();
         }
       });
-    }
-    /* 页码 */
-    list() {
-      /* 总页数 */
-      let num = Math.ceil($(".content img").size() / 15);
-      let str = "";
-      for (let i = 1; i <= 2; i++) {
-      
-        str += `<li><a href="">${i}</a></li>`
-      }
-      console.log(str)
-      this.ulList.html(str)
     }
   }
   return Randers;

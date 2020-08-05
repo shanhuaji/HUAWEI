@@ -5,6 +5,7 @@ require.config({
     'jquery': "https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min",
     'lazyload':
       "https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload",
+      'pagination':'https://cdn.bootcdn.net/ajax/libs/paginationjs/2.1.5/pagination'
      
   },
   shim:{
@@ -12,13 +13,17 @@ require.config({
       deps:['jquery'],
      /*  exports:'$.lazyload' */
     },
+    'pagination':{
+      deps:['jquery'],
+     /*  exports:'$.lazyload' */
+    },
   },
 });
 
 /* 调用模块 */
-require(["jquery", "lazyload"], function ($, List) {
-  require(["rander"], function (Randers) {
-   let randers = new Randers(); /* 渲染页面 */
-   /* let list = new List() *//* 列表页 */
+require(["jquery", "lazyload","pagination"], function ($, List,pagination) {
+  require([/* "rander", */'listpage'], function (/* Randers, */List) {
+   /* let randers = new Randers(); */ /* 渲染页面 */
+   let list = new List()/* 列表页 */
   });
 });
