@@ -1,6 +1,6 @@
 const { ajax, cssHooks } = require("jquery");
 /* 调用首页数据渲染模块 */
-require(["render", "secounds", "stairs"], function () {
+require([], function () {
   
 });
 /* 定义文件 */
@@ -28,6 +28,22 @@ define([], function () {
         this.tadver.hide();
       });
       this.clickHandler();
+      /* 判断cook用户名是否存在 */
+      this.cookie()
+    }
+    cookie(){
+      if($.cookie("username")){
+        $(".nav-right li:first a").html("欢迎登陆"+$.cookie("username"))
+        $(".nav-right li:eq(1)").hide()/* 注册隐藏 */
+        $(".nav-right li:eq(2)").show()/* 退出显示 */
+      }
+      /* 点击退出清除cook */
+      $(".nav-right li:eq(2)").on('click',()=>{
+        $(".nav-right li:first a").html('请登录')
+        $.cookie('username', null, { expires:-1, path: '/' });
+        $(".nav-right li:eq(1)").show()/* 注册显示 */
+        $(".nav-right li:eq(2)").hide()/* 退出隐藏 */
+      })
     }
     /* 接受数据 */
     getNumber() {
@@ -148,7 +164,7 @@ define([], function () {
       });
     }
   }
- 
-  let banner = new Banner();
+ return Banner
+  /* let banner = new Banner(); */
 });
 console.log("banner图模块");

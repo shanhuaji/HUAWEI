@@ -5,6 +5,12 @@ require.config({
     jqcookies:
       "https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie",
   },
+  shim:{
+    'jqcookie':{
+      deps:['jquery'],
+      /* exports:'$.jqcookie' */
+    },
+  },
 });
 /* 调用配置模块 */
 require(["jquery", "jqcookies"], function ($, jqcookies) {

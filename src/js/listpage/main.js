@@ -7,6 +7,12 @@ require.config({
       "https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload",
      
   },
+  shim:{
+    'lazyload':{
+      deps:['jquery'],
+     /*  exports:'$.lazyload' */
+    },
+  },
 });
 
 /* 调用模块 */

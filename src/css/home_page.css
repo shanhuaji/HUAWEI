@@ -59,7 +59,7 @@ nav > div {
   justify-content: space-between;
   align-items: center;
   
-  width: 420px;
+  width: 440px;
   height: 30px;
 }
 .nav-right li {
@@ -601,7 +601,7 @@ i {
 /* 手机 */
 .phone {
   width: 1000px;
-  height: 1103px;
+  height: 1650px;
   margin: 20px auto;
 }
 .phone ul {
