@@ -1,0 +1,70 @@
+@charset "utf-8";
+$sb: space-between;
+$f: flex;
+$c: center;
+/* 导航栏 */
+nav {
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    div {
+      width: 1000px;
+      height: 100%;
+      margin: 0 auto;
+      display: $f;
+      justify-content: $sb;
+      .nav-left {
+        width: 480px;
+        height: 30px;
+        display: $f;
+        justify-content: $sb;
+        align-items: $c;
+        li {
+          float: left;
+          font-size: 10px;
+          a {
+            color: aliceblue;
+            padding: 0px 4px;
+            border-right: 1px solid aliceblue;
+          }
+          &:nth-last-child(1) a {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+  .nav-right {
+    display: $f;
+    justify-content: $sb;
+    align-items: $c;
+    width: 440px;
+    height: 30px;
+    
+    li {
+      float: left;
+      font-size: 10px;
+      a {
+        padding: 0px 8px;
+        border-right: 1px solid aliceblue;
+        color: aliceblue;
+        
+        
+      }
+      &:nth-last-child(1) a {
+        border-right: none;
+      }
+      &::nth-last-child(2) a {
+        border-right: none;
+      }
+      &:nth-child(1) a {
+        border-right: none;
+      }
+      &:nth-last-child(1) {
+        background-color: #666;
+        height: 34px;
+        line-height: 34px;
+      }
+    }
+   
+  }

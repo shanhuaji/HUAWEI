@@ -1,4 +1,6 @@
 <?php
+header('Access-Control-Allow-Origin:*'); //任意域名访问
+header('Access-Control-Allow-Method:POST,GET');
 header('content-type:text/html;charset=utf-8');
 $conn = @new mysqli('127.0.0.1', 'root', 'root', 'huawei');
 

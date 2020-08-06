@@ -1,4 +1,6 @@
 const { cssHooks } = require("jquery");
+
+
 /* 详情页 */
 /* cookie页面 */
 define([], function () {
@@ -7,12 +9,13 @@ define([], function () {
       this.num = $(".right-shopping input"); /* 数量 */
       this.add = $(".right-shopping span i:first"); /* + */
       this.reduce = $(".right-shopping span i:last"); /* - */
-      this.shop = $(".right-shopping a:first"); /* 购物车 */
-      this.single = $(".right-shopping a:last"); /* 下单 */
+      this.shop = $(".right-shopping li:first"); /* 购物车 */
+      this.single = $(".right-shopping li:last"); /* 下单 */
       this.init();
     }
     init() {
-      this.clickHandler();
+     
+     this.clickHandler();
     }
     clickNumber(){
         /* 商品加减 */
@@ -31,8 +34,9 @@ define([], function () {
         }
       });
     }
+    /* 点击加入购物车 */
     clickHandler() {
-      let id = location.href.split("=")[1]; /* 域名中的id */
+      let id = $(location.href.split("=")).get(1); /* 域名中的id */
       let idArr = [];
       let numArr = [];
       /* 查询cookie的值 */
@@ -45,6 +49,7 @@ define([], function () {
       }
       this.clickNumber()
       this.shop.on("click", () => {
+          this.deter()
           /* 点击之后查询cook的值 */
         if ($.cookie("cookiesid") && $.cookie("cookienum")) {
           idArr = $.cookie("cookiesid").split(",");
@@ -62,11 +67,36 @@ define([], function () {
           $.cookie("cookiesid", idArr, { expires: 7, path: "/" });
           $.cookie("cookienum", numArr, { expires: 7, path: "/" });
         } else {
-            /* 有 就根据id的索引去修改当前数量数组中对应的值 */
-          numArr[$.inArray(id, idArr)] = $(".right-shopping input").val();
+          /* 添加购物车如果之前添加该商品 记录之前的值 加上本次的值 更改数组 */
+          let a = $(numArr).get($.inArray(id, idArr))
+           /* 有 就根据id的索引去修改当前数量数组中对应的值 */
+          numArr[$.inArray(id, idArr)] = parseInt($(".right-shopping input").val())+parseInt(a);
           $.cookie("cookienum", numArr, { expires: 7, path: "/" });
         }
       });
+    }
+    /* 确认是否进入购物车 */
+    deter(){
+      /* 获取当前商品的名字 */
+      let str = $(".right-header li:first").html()+" 成功加入购物车!"
+      $(".determine p").html(str)
+     /* 再逛逛 */
+        /* 位置 */
+        $(".determine").css({
+          left:($(window).width()- $(".determine").width())/2,
+          top:($(window).height()- $(".determine").height())/2
+        })
+        $(".determine").show()
+        $(window).on("scroll",()=>{
+          $(".determine").css({
+            left:($(window).width()- $(".determine").width())/2,
+            top:($(window).height()- $(".determine").height())/2
+          })
+        })
+        /* 点击再逛逛回到当前页面 */
+        $(".continue").on("click",()=>{
+          $(".continue").attr("href","location.href")
+        })
     }
   }
   return Cookies;

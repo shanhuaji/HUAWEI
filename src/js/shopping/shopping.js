@@ -1,4 +1,5 @@
 const { cssHooks } = require("jquery");
+/* const { cosh } = require("core-js/fn/number"); */
 
 /* 购物车页面 */
 define([], function () {
@@ -190,8 +191,8 @@ define([], function () {
     /* 选框 */
     clickCheckbox() {
       /* 两个全部起一样的class名字 */
-      let first = $(".allcheck"); /* 第一个全选 */
-      let last = $(".allcheck"); /* 最后一个全选 */
+      let first = $(".allcheck"); /* 第一个全选和最后一个全选 */
+      // let last = $(".allcheck"); /* 最后一个全选 */
       /* 其它按钮 */
       let other = $("input[type='checkbox']").not("input:last,input:first");
       /* 定义状态 用来全部按钮的切换 */
@@ -199,7 +200,7 @@ define([], function () {
       first.on("click", () => {
         bool = !bool;
         bool ? other.prop("checked", true) : other.prop("checked", false);
-        bool ? last.prop("checked", true) : last.prop("checked", false);
+        bool ? first.prop("checked", true) : first.prop("checked", false);
       });
 
       /* 单选框 */
@@ -209,10 +210,10 @@ define([], function () {
         /* 判断被选中的单选框的个数 */
         if (other.size() === singleCheck.size()) {
           first.prop("checked", true);
-          last.prop("checked", true);
+          /* last.prop("checked", true); */
         } else {
           first.prop("checked", false);
-          last.prop("checked", false);
+         /*  last.prop("checked", false); */
         }
       });
     }
@@ -224,7 +225,7 @@ define([], function () {
       const $remove = $(".select-right i");
       let that = this;
       $remove.on("click", function () {
-        /* 被点击元素的下标 */
+       /* 被点击元素的下标 */
         let index = $remove.index($(this));
         /* 删除对应的商品 */
         $current.eq(index).remove();
@@ -237,13 +238,16 @@ define([], function () {
         $.each($(".sr-num input"), (index, value) => {
           newnumArr.push($(value).val());
         });
-        /* 将删除后剩余的商品的id和数量传给cookie */
+      /* 删除一个 */
+       that.totalPriceNum()
+        // /* 将删除后剩余的商品的id和数量传给cookie */
         $.cookie("cookiesid", that.idArr, { expires: 7, path: "/" });
         $.cookie("cookienum", newnumArr, { expires: 7, path: "/" });
       });
     }
     /* 总删除 */
     removeHandler() {
+      
       /* 清除cookie */
       /* 点击全部商品 删除全部商品，结算，全选 */
       /* 清除所有的cookie  重新给cookie赋值 保证程序正常进行 */

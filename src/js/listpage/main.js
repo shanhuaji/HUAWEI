@@ -11,17 +11,17 @@ require.config({
   shim:{
     'lazyload':{
       deps:['jquery'],
-     /*  exports:'$.lazyload' */
+      exports:'$.lazyload'
     },
     'pagination':{
       deps:['jquery'],
-     /*  exports:'$.lazyload' */
+      exports:'$.lazyload'
     },
   },
 });
 
 /* 调用模块 */
-require(["jquery", "lazyload","pagination"], function ($, List,pagination) {
+require(["jquery", "lazyload","pagination"], function ($, lazyload,pagination) {
   require([/* "rander", */'listpage'], function (/* Randers, */List) {
    /* let randers = new Randers(); */ /* 渲染页面 */
    let list = new List()/* 列表页 */

@@ -435,7 +435,7 @@ nav > div {
   border-bottom: 1px solid black;
 }
 
-.right-shopping a {
+.right-shopping li {
   width: 150px;
   height: 45px;
   background-color: rgb(214, 142, 7);
@@ -444,7 +444,7 @@ nav > div {
   line-height: 45px;
   text-align: center;
 }
-.right-shopping a:nth-child(3) {
+.right-shopping li:nth-child(3) {
   background-color: brown;
   margin-left: -5px;
 }
@@ -652,3 +652,52 @@ nav > div {
   justify-content: space-between;
   align-items: center;
 }
+/* 再逛逛 */
+.determine{
+   width: 320px;
+  height: 80px;
+  background-color: rgb(245, 239, 239);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 40px;
+ display: none;
+  position: fixed;
+  z-index: 2;
+}
+.determine p{
+  margin-bottom: 10px;
+ text-align: center;
+  width: 320px;
+}
+.de-list{
+  display: flex;
+  justify-content: space-around;
+}
+.de-list li{
+  
+  width: 100px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: yellow;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  
+}
+.de-list li:nth-child(1){
+ background-color: #e5e5e5;
+ color: black;
+  
+}
+.de-list li:nth-child(2){
+  background-color: rgb(192, 28, 28);
+  color: #e5e5e5;
+  
+ }
+ .de-list li:nth-child(2) a{
+  
+  color: #e5e5e5;
+  
+ }

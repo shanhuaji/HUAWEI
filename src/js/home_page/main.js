@@ -10,11 +10,11 @@ require.config({
   shim:{
     'lazyload':{
       deps:['jquery'],
-     /*  exports:'$.lazyload' */
+      exports:'$.lazyload'
     },
     'jqcookie':{
       deps:['jquery'],
-      /* exports:'$.jqcookie' */
+      exports:'$.jqcookie'
     },
   },
 })

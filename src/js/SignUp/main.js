@@ -11,7 +11,7 @@ require.config({
   shim:{
     'jqcookie':{
       deps:['jquery'],
-      /* exports:'$.jqcookie' */
+      exports:'$.jqcookie'
     },
   },
 });
