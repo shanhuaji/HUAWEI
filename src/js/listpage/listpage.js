@@ -24,7 +24,7 @@ define([], function () {
       /* 总数据条数的ajax */
       $.ajax({
         type: "post",
-        url: "http://127.0.0.1/HUAWEI/php/home_page.php",
+        url: "http://10.31.163.66/HUAWEI/php/home_page.php",
         data: {
           name: names,
         },
@@ -48,7 +48,7 @@ define([], function () {
       /* 获取当前页面数据的ajax */
       $.ajax({
         type: "get",
-        url: "http://127.0.0.1/HUAWEI/php/listdata.php",
+        url: "http://10.31.163.66/HUAWEI/php/listdata.php",
         data: {
           name: names,
           page: page /* 默认发送第一页 */,
@@ -63,7 +63,7 @@ define([], function () {
       let str = "";
       $.each(date, (index, value) => {
         str += `
-              <a href="http://127.0.0.1/HUAWEI/src/details.html?sid=${value.Id}" target="_blank">
+              <a href="http://10.31.163.66/HUAWEI/src/details.html?sid=${value.Id}" target="_blank">
                 <img data-original="${value.banuser}" class="lazyload" width="130" height="150" />
                 <strong>${value.phoneName}</strong>
                 <i>￥${value.price}</i>

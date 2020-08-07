@@ -24,7 +24,7 @@ define([], function () {
       names = decodeURI(names);
       $.ajax({
         type: "post",
-        url: "http://127.0.0.1/HUAWEI/php/home_page.php",
+        url: "http://10.31.163.66/HUAWEI/php/home_page.php",
         data: {
           name: names,
         },
@@ -41,7 +41,7 @@ define([], function () {
       // console.log(this.data.size());
       /* $.each(this.data, (index, value) => {
         str += `
-          <a href="http://127.0.0.1/HUAWEI/src/details.html?sid=${value.Id}" target="_blank">
+          <a href="http://10.31.163.66/HUAWEI/src/details.html?sid=${value.Id}" target="_blank">
             <img data-original="${value.banuser}" class="lazyload" width="130" height="150" />
             <strong>${value.phoneName}</strong>
             <i>￥${value.price}</i>
@@ -60,7 +60,7 @@ define([], function () {
        /* 如果j的值 小于数据的长度  就渲染数据 */
         if (j < this.data.length) {
           strOne += `
-              <a href="http://127.0.0.1/HUAWEI/src/details.html?sid=${this.data[j].Id}" target="_blank">
+              <a href="http://10.31.163.66/HUAWEI/src/details.html?sid=${this.data[j].Id}" target="_blank">
                 <img data-original="${this.data[j].banuser}" class="lazyload" width="130" height="150" />
                 <strong>${this.data[j].phoneName}</strong>
                 <i>￥${this.data[j].price}</i>
@@ -99,7 +99,7 @@ define([], function () {
           /* 如果j的值 小于数据的长度  就渲染数据 */
           if (j < that.data.length) {
             strTwo += `
-                <a href="http://127.0.0.1/HUAWEI/src/details.html?sid=${that.data[j].Id}" target="_blank">
+                <a href="http://10.31.163.66/HUAWEI/src/details.html?sid=${that.data[j].Id}" target="_blank">
                   <img data-original="${that.data[j].banuser}" class="lazyload" width="130" height="150" />
                   <strong>${that.data[j].phoneName}</strong>
                   <i>￥${that.data[j].price}</i>

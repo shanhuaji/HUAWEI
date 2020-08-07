@@ -2,9 +2,10 @@
 header('Access-Control-Allow-Origin:*'); //任意域名访问
 header('Access-Control-Allow-Method:POST,GET');
 /* $ban = $_POST['banner']; */
+/* @include "conn"; */
 header('content-type:text/html;charset=utf-8');
-$conn = @new mysqli('127.0.0.1', 'root', 'root', 'huawei');
-if ($_POST['banner']) {
+$conn = @new mysqli('localhost', 'root', 'root', 'huawei');
+if (isset($_POST['banner'])) {
     $result = $conn->query("SELECT * FROM banner WHERE name = 'ban'");
     $arr = array(); //准备一个空数组
     for ($i = 0; $i < $result->num_rows; $i++) {
@@ -14,7 +15,7 @@ if ($_POST['banner']) {
     echo json_encode($arr);
 }
 /* 手机 */
-if ($_POST['phone']) {
+if (isset($_POST['phone'])) {
     $result = $conn->query("SELECT * FROM banner WHERE name = 'allphone'");
     $arr = array(); //准备一个空数组
     for ($i = 0; $i < $result->num_rows; $i++) {
@@ -26,7 +27,7 @@ if ($_POST['phone']) {
 
 
 /* sid */
-if ($_GET['sid']) {
+if (isset($_GET['sid'])) {
 
     $sid = $_GET['sid'];
     $result = $conn->query("SELECT * FROM banner WHERE Id='{$sid}'");
@@ -39,7 +40,7 @@ if ($_GET['sid']) {
 }
 
 /* 二级菜单 */
-if ($_POST['name']) {
+if (isset($_POST['name'])) {
 
     $name = $_POST['name'];
     $result = $conn->query("SELECT * FROM banner WHERE listname='{$name}'");
@@ -51,7 +52,7 @@ if ($_POST['name']) {
     echo json_encode($arr);
 }
 /* 购物车 */
-if ($_POST["id"]) {
+if (isset($_POST["id"])) {
     $id = $_POST['id'];
     $result = $conn->query("SELECT * FROM banner");
     // $result = $conn->query("SELECT * FROM banner WHERE Id='{$id}'");

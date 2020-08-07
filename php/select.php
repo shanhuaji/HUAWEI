@@ -2,9 +2,9 @@
 header('Access-Control-Allow-Origin:*'); //任意域名访问
 header('Access-Control-Allow-Method:POST,GET');
 header('content-type:text/html;charset=utf-8');
-$conn = @new mysqli('127.0.0.1', 'root', 'root', 'huawei');
-
-/* if ($_POST['name']) {
+$conn = @new mysqli('localhost', 'root', 'root', 'huawei');
+/* @include "conn"; */
+/* if (isset($_POST['name'])) {
 
     $name = $_POST['name'];
     $result = $conn->query("SELECT * FROM select WHERE listname='$name'");
@@ -15,7 +15,7 @@ $conn = @new mysqli('127.0.0.1', 'root', 'root', 'huawei');
 
     echo json_encode($arr);
 } */
-if ($_POST['name']) {
+if (isset($_POST['name'])) {
 
     $name = $_POST['name'];
     $result = $conn->query("SELECT * FROM second WHERE listname='$name'");

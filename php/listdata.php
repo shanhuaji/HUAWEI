@@ -4,8 +4,8 @@
 header('Access-Control-Allow-Origin:*'); //任意域名访问
 header('Access-Control-Allow-Method:POST,GET');
 header('content-type:text/html;charset=utf-8');
-$conn = @new mysqli('127.0.0.1', 'root', 'root', 'huawei');
-
+$conn = @new mysqli('localhost', 'root', 'root', 'huawei');
+/* @include "conn"; */
 $pagesize = 12; //单个页面展示的数据条数，自由设置
 
 $sql = "select * from banner"; //获取所有的数据

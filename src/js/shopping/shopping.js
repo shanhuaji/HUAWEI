@@ -20,7 +20,7 @@ define([], function () {
       /* 获取数组库的数据 */
       $.ajax({
         type: "post",
-        url: "http://127.0.0.1/HUAWEI/php/home_page.php",
+        url: "http://10.31.163.66/HUAWEI/php/home_page.php",
         data: {
           id: "1",
         },

@@ -18,7 +18,7 @@ define([], function() {
     getNum() {
       $.ajax({
         type:"post",
-        url: "http://127.0.0.1/HUAWEI/php/home_page.php",
+        url: "http://10.31.163.66/HUAWEI/php/home_page.php",
         data:{
           /* 后边数据库判断返回的数据 */
           phone:"phone"
@@ -33,7 +33,7 @@ define([], function() {
       /* 此处懒加载没生效 */
       $.each(date,(index,value)=>{
        str += `
-          <a href="http://127.0.0.1/HUAWEI/src/details.html?sid=${value.Id}" target='_blank'>
+          <a href="http://10.31.163.66/HUAWEI/src/details.html?sid=${value.Id}" target='_blank'>
             <img data-original="${value.banuser}" alt="" class="lazyload" width="170" height="175" >
             <em>${value.phoneName}</em>
             <span>${value.discount}</span>

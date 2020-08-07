@@ -1,4 +1,5 @@
 const { ajax, cssHooks } = require("jquery");
+/* const colorSupport = require("color-support"); */
 /* 调用首页数据渲染模块 */
 require([], function () {
   
@@ -32,6 +33,7 @@ define([], function () {
       this.cookie()
     }
     cookie(){
+      
       if($.cookie("username")){
         $(".nav-right li:first a").html("欢迎登陆"+$.cookie("username"))
         $(".nav-right li:eq(1)").hide()/* 注册隐藏 */
@@ -47,15 +49,17 @@ define([], function () {
     }
     /* 接受数据 */
     getNumber() {
+     
       $.ajax({
         type: "post",
-        url: "http://127.0.0.1/HUAWEI/php/home_page.php",
+        url: "http://10.31.163.66/HUAWEI/php/home_page.php",
         data: {
           /* 后边数据库判断返回的数据 */
           banner: "banner",
         },
         dataType: "json",
       }).done((date) => {
+       
         this.display(date);
       });
     }
@@ -99,6 +103,7 @@ define([], function () {
     }
     /* 点击事件 */
     clickHandler() {
+     
       let that = this;
       /* 点击左键 */
       this.left.on("click", function () {
@@ -131,6 +136,7 @@ define([], function () {
     }
     /* 点击右键 */
     rightClick() {
+      console.log("111111")
       this.index++;
       if (this.index > this.aImg.length - 1) {
         this.index = 0;

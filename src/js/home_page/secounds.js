@@ -26,7 +26,7 @@ define([], function () {
         that.name = $(this).children().eq(0).html();
         $.ajax({
           type: "post",
-          url: "http://127.0.0.1/HUAWEI/php/select.php",
+          url: "http://10.31.163.66/HUAWEI/php/select.php",
           data: {
             /* 当前滑过元素的内容 */
             name: that.name,
@@ -56,7 +56,7 @@ define([], function () {
       $.each(urlArr, (index, value) => {
         str += `
           <li>
-            <a href="http://127.0.0.1/HUAWEI/src/listpage.html?name=${this.name}" target="_blank">
+            <a href="http://10.31.163.66/HUAWEI/src/listpage.html?name=${this.name}" target="_blank">
               <img src='${urlArr[index]}' alt="">
               <i>${imgArr[index]}</i>
             </a>

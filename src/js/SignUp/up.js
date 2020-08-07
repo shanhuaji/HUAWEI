@@ -185,7 +185,7 @@ define([], function () {
           this.confirmPassBool
         ) {
           this.sendOutNumber(); /* 发送数据 */
-          this.sub.attr("href", "http://127.0.0.1/HUAWEI/src/Loginpage.html");
+          this.sub.attr("href", "http://10.31.163.66/HUAWEI/src/Loginpage.html");
         } else {
           eve.preventDefault();
         }
@@ -199,7 +199,7 @@ define([], function () {
       this.pass = $(".pass"); /* 密码 */
       $.ajax({
         type:"post",
-        url:"http://127.0.0.1/HUAWEI/php/signup.php",
+        url:"http://10.31.163.66/HUAWEI/php/signup.php",
         data:{
           text:this.text.val(),
           email:this.email.val(),

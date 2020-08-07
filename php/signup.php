@@ -4,9 +4,10 @@ header('Access-Control-Allow-Origin:*'); //任意域名访问
 header('Access-Control-Allow-Method:POST,GET');
 header('content-type:text/html;charset=utf-8');
 
-$conn = @new mysqli('127.0.0.1', 'root', 'root', 'huawei');
+$conn = @new mysqli('localhost', 'root', 'root', 'huawei');
+/* @include "conn"; */
 /* 注册 */
-if ($_POST['text']) {
+if (isset($_POST['text'])) {
     $text = $_POST['text'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -15,7 +16,7 @@ if ($_POST['text']) {
 }
 
 /* 注册 */
-if ($_POST['textNum']) {
+if (isset($_POST['textNum'])) {
 
     $textNum = $_POST['textNum'];
     $result = $conn->query("SELECT * FROM signup WHERE text='$textNum'");

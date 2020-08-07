@@ -20,7 +20,7 @@ define([], function () {
       this.sub.on("click", (eve) => {
         $.ajax({
           type: "post",
-          url: "http://127.0.0.1/HUAWEI/php/signup.php",
+          url: "http://10.31.163.66/HUAWEI/php/signup.php",
           data: {
             textNum: this.textNum.val(),
           },
@@ -45,7 +45,7 @@ define([], function () {
       if (this.password.val() === date.pass) {
         /* 跳转首页  设置cook */
         $.cookie("username", this.textNum.val(), { expires: 7, path: "/" });
-        location.href = "http://127.0.0.1/HUAWEI/src/home_page.html";
+        location.href = "http://10.31.163.66/HUAWEI/src/home_page.html";
       } else {
         this.passHtml.html("密码有误");
         this.passHtml.css({ color: "red" });
