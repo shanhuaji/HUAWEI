@@ -52,6 +52,5 @@ define([], function() {
     
   }
   return BoxShow
-  /* let boxshow = new BoxShow(); */
+ 
 });
-console.log("数据渲染模块")

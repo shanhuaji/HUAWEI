@@ -74,6 +74,6 @@ define([], function () {
     }
   }
   return Stairs
-  /* let stair = new Stairs(); */
+ 
 });
-console.log("楼梯模块");
+

@@ -3,7 +3,7 @@
 /* require(['listpage'],function(List){
   let list = new List()
 }) */
-/* 不用插件 分页  有瑕疵 */
+/* 不用插件 分页 纯前端 有瑕疵 */
 const { cssHooks } = require("jquery");
 
 define([], function () {

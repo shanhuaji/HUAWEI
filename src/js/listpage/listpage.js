@@ -30,7 +30,6 @@ define([], function () {
         },
         dataType: "json",
       }).done((date) => {
-        console.log(date);
         /* 获得类目下的所有数据 使用长度/显示的个数 确定页码 */
         let strip = 12; /* 每页显示的条数 */
         let num = Math.ceil(date.length / strip); /* 页码 */
@@ -56,7 +55,6 @@ define([], function () {
         },
         dataType: "json",
       }).done((date) => {
-        console.log(date);
         this.display(date); /* 渲染 */
         this.numberSort(date); /* 排序 */
       });
@@ -85,7 +83,7 @@ define([], function () {
       $(".num-content ul").on("click", "li", function () {
         /* 找到被点击元素的下标 */
         let i = $(".num-content ul li").index($(this));
-        console.log(i);
+
         that.currentNumber(i + 1);
       });
     }
@@ -94,17 +92,16 @@ define([], function () {
       /* 点击排序 */
       let bool = true;
       this.price.on("click", () => {
-        bool = !bool;/* 状态切换 */
+        bool = !bool; /* 状态切换 */
         if (bool) {
           /* 升序 */
           date.sort((a, b) => {
             return a.price - b.price;
           });
-          console.log(bool);
+
           /* 排完渲染数据 */
           this.display(date);
         } else {
-          console.log(bool);
           /* 降序 */
           date.sort((a, b) => {
             return b.price - a.price;

@@ -76,7 +76,7 @@ define([], function () {
     }
   }
   return Second;
-  /* let second = new Second(); */
+ 
 });
 
-console.log("二级菜单模块");
+

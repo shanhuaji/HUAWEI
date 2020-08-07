@@ -11,7 +11,7 @@ define([], function () {
       this.init();
     }
     init() {
-      console.log(this.sub);
+      
       this.sendNumber();
     }
     /* 发送获取数据 */

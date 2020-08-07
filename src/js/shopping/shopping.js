@@ -252,6 +252,7 @@ define([], function () {
       /* 点击全部商品 删除全部商品，结算，全选 */
       /* 清除所有的cookie  重新给cookie赋值 保证程序正常进行 */
       $(".ms-left span:last").on("click", () => {
+        $(".main-null").show()
         $(".main-middle").remove();
         $(".main-settlement").remove();
         $(".main-top").remove();

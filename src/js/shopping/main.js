@@ -16,6 +16,8 @@ require.config({
 require(["jquery", "jqcookies"], function ($, jqcookies) {
   /* 调用定义模块 */
   require(["shopping"], function (Shop) {
+   
     let shop = new Shop();
+   
   });
 });

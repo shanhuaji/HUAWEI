@@ -165,6 +165,6 @@ define([], function () {
     }
   }
  return Banner
-  /* let banner = new Banner(); */
+ 
 });
-console.log("banner图模块");
+

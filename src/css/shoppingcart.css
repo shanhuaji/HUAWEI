@@ -92,6 +92,11 @@ nav > div {
   overflow: hidden;
 }
 /* 购物车为空时显示 */
+.main .main-null{
+  display: none;
+  width: 1250px;
+  height: 500px;
+}
 .main .main-empty {
   width: 1250px;
   height: 500px;
@@ -102,7 +107,7 @@ nav > div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  display: none;
+  
 }
 .main-empty em {
   display: block;
@@ -126,6 +131,9 @@ nav > div {
   color: #f4f4f4;
   line-height: 40px;
   text-align: center;
+}
+.main-empty a{
+  color: #e5e5e5;
 }
 /* 购物车不为空 */
 .no-empty {

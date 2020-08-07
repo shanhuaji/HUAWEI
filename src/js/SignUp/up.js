@@ -13,7 +13,7 @@ define([], function () {
       this.confirmPass = $(".confirmPass"); /* 确认密码 */
       this.sub = $(".reg-list p a"); /* 提交 */
       this.init();
-      console.log("注册");
+     
     }
     init() {
       this.textEvent(); /* 账号 */
@@ -145,7 +145,7 @@ define([], function () {
             this.passBool = true;
             break;
         }
-        console.log(this.passBool);
+     
       });
     }
     /* 确认密码 */
@@ -169,8 +169,7 @@ define([], function () {
           this.confirmPass.siblings("em").css("color", "green");
           this.confirmPassBool = false;
         }
-        console.log(this.confirmPass.val());
-        console.log(this.pass.val());
+       
       });
     }
     /* 注册按钮 */

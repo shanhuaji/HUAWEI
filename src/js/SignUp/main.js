@@ -21,7 +21,7 @@ require(["jquery","jqcookie"], function ($,jqcookie) {
   let mod = $("#signup").attr("paging");
   /* js文件夹的名字必须和html中paging属性值相同 */
   if (mod) {
-      console.log(mod)
+  
     require([mod], function (Data) {
       let data = new Data
     
